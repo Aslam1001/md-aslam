@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>SignUp</title> <!-- Changed -->
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="index.html">Home</a> <!-- Changed -->
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0">
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="signup.html">Signup</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 2rem;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+              <form action="/signupdata.php" name="SignUpForm" onsubmit="return ValidateSignUpForm()" method="get">
+
+                <div class="row">
+                  <div class="form-outline col-md-6 mb-4">
+                    <label class="form-label" for="firstName">First Name</label>
+                    <input type="text" id="firstName" class="form-control form-control-lg" required />
+                  </div>
+                  <div class="form-outline col-md-6 mb-4">
+                    <label class="form-label" for="lastName">Last Name</label>
+                    <input type="text" id="lastName" class="form-control form-control-lg" required />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-outline col-md-6 mb-4">
+                    <label for="birthdayDate" class="form-label">Date of Birth</label>
+                    <input class="form-control form-control-lg" type="date" id="dob" name="dob" value="2000-01-01"
+                      min="1947-08-15" max="2047-08-15" required>
+                  </div>
+
+                  <div class="form-outline col-md-6 mb-4">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="select form-control form-control-lg" id="gender">
+                      <option value="choose option" disabled>Choose an option</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-outline col-md-6 mb-4">
+                    <label class="form-label" for="emailAddress">Email</label>
+                    <input type="email" id="emailAddress" class="form-control form-control-lg" required />
+                  </div>
+                  <div class="form-outline col-md-6 mb-4">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="passWord" autocomplete="on" class="form-control form-control-lg"
+                      required />
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="form-outline col-md-6 mb-4">
+                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                    <input class="form-control form-control-lg" type="tel" id="phoneNumber" placeholder="9988776655" pattern="[0-9]{10}" required />
+                  </div>
+                  <!--- class="form-control form-control-lg"  -->
+                  <div class="form-outline col-md-6 mb-4">
+                    <label for="qualification" class="form-label">Qualification</label>
+                    <select class="select form-control form-control-lg" id="qualification">
+                      <option value="choose an option" disabled>Choose an option</option>
+                      <option value="Matriculation">Matriculation</option>
+                      <option value="Intermediate">Intermediate</option>
+                      <option value="BE/BTech">BE/BTech</option>
+                      <option value="ME/MTech">ME/MTech</option>
+                      <option value="PhD">PhD</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <div class="form-outline col-md-6 mb-4">
+                    <label class="form-label" for="occupation">Occupation</label>
+                    <input type="text" id="occupation" class="form-control form-control-lg" />
+                  </div>
+                  <div class="form-outline col-md-6 mb-4">
+                    <label class="form-label" for="orgint">Organisation/Institution Name</label>
+                    <input type="text" id="orgint" class="form-control form-control-lg" />
+                  </div>
+                </div>
+
+                <div class="mt-4 pt-2" style="text-align: center;">
+                  <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+</body>
+<script>
+  function ValidateSignUpForm() {
+    var fname = document.forms['SignUpForm']['firstName'].value;
+    var lname = document.forms['SignUpForm']['lastName'].value;
+    var fdob = document.forms['SignUpForm']['dob'].value;
+    var fgender = document.forms['SignUpForm']['gender'].value;
+    var femail = document.forms['SignUpForm']['emailAddress'].value;
+    var fphone = document.forms['SignUpForm']['phoneNumber'].value;
+    var fqual = document.forms['SignUpForm']['qualification'].value;
+    var focc = document.forms['SignUpForm']['occupation'].value;
+    var forgint = document.forms['SignUpForm']['orgint'].value;
+    console.log(fname, lname, fdob, fgender, femail, fphone, fqual, focc, forgint);
+  }
+
+  function SetError(error) {
+    alert(error);
+  }
+</script>
+
+</html>
